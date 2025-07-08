@@ -12,6 +12,7 @@ class WorkbenchServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+
     }
 
     /**
@@ -20,5 +21,6 @@ class WorkbenchServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+
     }
 }

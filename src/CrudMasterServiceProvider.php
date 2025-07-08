@@ -3,6 +3,7 @@
 namespace Elcomware\CrudMaster;
 
 
+use Elcomware\CrudMaster\Commands\GenerateCrudCommand;
 use Illuminate\Support\ServiceProvider;
 
 
@@ -25,6 +26,9 @@ class CrudMasterServiceProvider extends ServiceProvider
     public function register(): void
     {
 
+        $this->RegisterCommands();
+
+
         // Merge package config with app config
         $this->mergeConfigFrom(__DIR__ . '/../config/crudmaster.php', 'crudmaster');
 
@@ -40,6 +44,30 @@ class CrudMasterServiceProvider extends ServiceProvider
      * This is where routes, views, and publishable assets are loaded.
      */
     public function boot(): void
+    {
+
+        $this->RegisterBeforBoot();
+
+        $this->RegisterAfterBoot();
+
+    }
+
+
+    protected function RegisterCommands(): void
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                GenerateCrudCommand::class, // REGISTER YOUR COMMAND HERE!
+            ]);
+        }
+
+    }
+
+    protected function RegisterBeforBoot(): void{
+
+    }
+
+    protected function RegisterAfterBoot(): void
     {
         // Load package routes
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
@@ -65,4 +93,5 @@ class CrudMasterServiceProvider extends ServiceProvider
             __DIR__ . '/../resources/js' => resource_path('js/vendor/crudmaster'),
         ], 'crudmaster-js');
     }
+
 }
