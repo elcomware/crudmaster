@@ -61,7 +61,7 @@ node_modules/
 dist/
 public/hot
 public/build
-vite.config.js           
+vite.config.js
 yarn.lock
 pnpm-lock.yaml
 npm-debug.log*
