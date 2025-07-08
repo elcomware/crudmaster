@@ -1,0 +1,31 @@
+includes:
+    - phpstan-baseline.neon
+
+parameters:
+    level: 5
+    paths:
+        - src
+        - config
+        - database
+    tmpDir: build/phpstan
+    excludePaths:
+        - tests/Fixtures/*
+        - tests/Stubs/*
+
+    checkUninitializedProperties: true
+    checkGenericClassInNonGenericObjectType: true
+
+    # Laravel-specific settings
+    larastan:
+        analyse_application: true
+        container_reuse: true
+        model_properties: true
+
+    ignoreErrors:
+        - '#Call to an undefined method Illuminate\\[^\s]+::[^\s]+#'
+
+    autoload_directories:
+        - workbench/app
+
+    bootstrapFiles:
+        - tests/bootstrap.php

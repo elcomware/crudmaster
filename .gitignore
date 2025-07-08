@@ -1,0 +1,100 @@
+# ┌───────────────────────────┐
+# │ Laravel & PHP Base Rules  │
+# └───────────────────────────┘
+
+# Ignore application logs, caches, compiled files, etc.
+*.log
+*.cache
+*.phpunit.result.cache
+*.env
+.env.*
+.env.backup
+
+# Laravel framework generated files
+bootstrap/cache/*
+!bootstrap/cache/.gitignore
+
+storage/*
+!storage/app/
+!storage/framework/
+!storage/framework/cache
+!storage/framework/sessions
+!storage/framework/testing
+!storage/framework/views
+!storage/logs
+
+# IDE/OS files
+.DS_Store
+Thumbs.db
+build/
+*.sublime-workspace
+*.sublime-project
+
+# ┌───────────────────────────┐
+# │ Composer & PHP Tools      │
+# └───────────────────────────┘
+
+vendor/
+composer.lock
+
+# Laravel Pint (optional binary file cache)
+.pint.cache
+
+# Laravel IDE Helper (optional)
+.phpstorm.meta.php
+_ide_helper*.php
+
+# ┌───────────────────────────┐
+# │ Testing & Coverage Files  │
+# └───────────────────────────┘
+
+coverage/
+coverage.xml
+.phpunit.result.cache
+pest.php
+
+# ┌───────────────────────────┐
+# │ Frontend (Optional Vue)   │
+# └───────────────────────────┘
+
+node_modules/
+dist/
+public/hot
+public/build
+vite.config.js           
+yarn.lock
+pnpm-lock.yaml
+npm-debug.log*
+yarn-error.log*
+
+# ┌──────────────────────────────┐
+# │ Workbench / Testbench Setup  │
+# └──────────────────────────────┘
+
+workbench/storage/
+workbench/vendor/
+workbench/.env
+workbench/.phpunit.result.cache
+workbench/composer.lock
+workbench/node_modules/
+
+# ┌───────────────────────────┐
+# │ Editor Configs            │
+# └───────────────────────────┘
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ┌───────────────────────────┐
+# │ Miscellaneous             │
+# └───────────────────────────┘
+
+# Ignore local symlinks or temp files
+*.bak
+*.tmp
+
+# Avoid .gitignore overwrite conflicts
+!.gitignore

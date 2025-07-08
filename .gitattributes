@@ -1,0 +1,44 @@
+# ┌─────────────────────────────┐
+# │ Ignore Development Artifacts│
+# └─────────────────────────────┘
+
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.editorconfig export-ignore
+/.php-cs-fixer.dist.php export-ignore
+/.phpstorm.meta.php export-ignore
+/.pint.cache export-ignore
+/phpstan.neon export-ignore
+/pint.json export-ignore
+
+/tests export-ignore
+/workbench export-ignore
+
+/.env export-ignore
+/.env.* export-ignore
+
+/composer.lock export-ignore
+
+# ┌─────────────────────────────┐
+# │ Ignore GitHub CI Config     │
+# └─────────────────────────────┘
+
+/.github export-ignore
+
+# ┌─────────────────────────────┐
+# │ Ignore Documentation (if desired) │
+# └─────────────────────────────┘
+
+/CHANGELOG.md export-ignore
+/README.md export-ignore
+
+# ┌─────────────────────────────┐
+# │ Optional: Ignore build/test scripts │
+# └─────────────────────────────┘
+
+/tests export-ignore
+/.phpunit.result.cache export-ignore
+/coverage.xml export-ignore
+/pest.php export-ignore
+/coverage/ export-ignore
+
